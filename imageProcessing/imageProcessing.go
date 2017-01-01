@@ -1,7 +1,7 @@
 package imageProcessing
 
 import (
-	"github.com/horvatic/kwell/imagePixels"
+	"github.com/horvatic/vaticwella/imagePixels"
 	"image"
 )
 

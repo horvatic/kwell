@@ -3,7 +3,7 @@ package imageHttp
 import (
 	"bytes"
 	"fmt"
-	"github.com/horvatic/kwell/imageProcessing"
+	"github.com/horvatic/vaticwella/imageProcessing"
 	"image/png"
 	"io/ioutil"
 	"net/http"
