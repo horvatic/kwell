@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/horvatic/kwell/imageHttp"
+	"github.com/horvatic/vaticwella/imageHttp"
 	"net/http"
 )
 
