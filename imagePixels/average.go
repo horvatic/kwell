@@ -4,7 +4,7 @@ import (
 	"image/color"
 )
 
-func Average(colors [9]color.Color) color.Color {
+func Average(colors []color.Color) color.Color {
 	var r, g, b, n uint32
 	for _, c := range colors {
 		cr, cg, cb, _ := c.RGBA()
@@ -19,5 +19,5 @@ func Average(colors [9]color.Color) color.Color {
 	if n == 0 {
 		return color.RGBA{uint8(r), uint8(g), uint8(b), 255}
 	}
-	return color.RGBA{uint8(r / n >> 8), uint8(g / n >> 8), uint8(b / n >> 8), 255}
+	return color.RGBA{shiftUint32(r / n), shiftUint32(g / n), shiftUint32(b / n), 255}
 }
