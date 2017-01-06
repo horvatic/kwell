@@ -12,7 +12,7 @@ func TestAverage(test *testing.T) {
 	color := imagePixels.Average(colors)
 
 	r, g, b, _ := color.RGBA()
-	if r>>8 != 1 && g>>8 != 2 && b>>8 != 3 {
+	if r>>8 != 1 || g>>8 != 2 || b>>8 != 3 {
 		test.Errorf("Error colors not averaged r:%d, g:%d, b:%d", r>>8, g>>8, b>>8)
 	}
 }
