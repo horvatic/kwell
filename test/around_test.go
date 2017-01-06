@@ -4,7 +4,6 @@ import (
 	"github.com/horvatic/vaticwella/imagePixels"
 	"image"
 	"image/color"
-	"strconv"
 	"testing"
 )
 
@@ -32,7 +31,7 @@ func TestAround(test *testing.T) {
 
 func checkColor(t *testing.T, expectColor, currentColor uint32) {
 	if expectColor != currentColor {
-		t.Error("Expect color to be " + strconv.Itoa(int(expectColor)) + " color was " + strconv.Itoa(int(currentColor)))
+		t.Errorf("Expect color to be %d color was %d", int(expectColor), int(currentColor))
 	}
 }
 
