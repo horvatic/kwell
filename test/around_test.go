@@ -8,16 +8,12 @@ import (
 	"testing"
 )
 
-func TestAround(t *testing.T) {
+func TestAround(test *testing.T) {
 	img := image.NewRGBA(image.Rect(0, 0, 10, 10))
 	imageSetUp(img)
 
 	colors := imagePixels.Around(img, 5, 5)
 
-	testColors(colors, t)
-}
-
-func testColors(colors []color.Color, t *testing.T) {
 	expColor := counterUInt32()
 	for _, c := range colors {
 		cr, cg, cb, ca := c.RGBA()
@@ -26,11 +22,17 @@ func testColors(colors []color.Color, t *testing.T) {
 		eb := expColor()
 		ea := expColor()
 
-		checkColor(t, er, cr>>8)
-		checkColor(t, eg, cg>>8)
-		checkColor(t, eb, cb>>8)
-		checkColor(t, ea, ca>>8)
+		checkColor(test, er, cr>>8)
+		checkColor(test, eg, cg>>8)
+		checkColor(test, eb, cb>>8)
+		checkColor(test, ea, ca>>8)
 
+	}
+}
+
+func checkColor(t *testing.T, expectColor, currentColor uint32) {
+	if expectColor != currentColor {
+		t.Error("Expect color to be " + strconv.Itoa(int(expectColor)) + " color was " + strconv.Itoa(int(currentColor)))
 	}
 }
 
@@ -45,13 +47,6 @@ func imageSetUp(img *image.RGBA) {
 	img.Set(6, 4, color.RGBA{setColor(), setColor(), setColor(), setColor()})
 	img.Set(6, 5, color.RGBA{setColor(), setColor(), setColor(), setColor()})
 	img.Set(6, 6, color.RGBA{setColor(), setColor(), setColor(), setColor()})
-}
-
-func checkColor(t *testing.T, expectColor, currentColor uint32) {
-
-	if expectColor != currentColor {
-		t.Error("Expect color to be " + strconv.Itoa(int(expectColor)) + " color was " + strconv.Itoa(int(currentColor)))
-	}
 }
 
 func counterUInt8() func() uint8 {
