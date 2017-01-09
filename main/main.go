@@ -5,5 +5,5 @@ import (
 )
 
 func main() {
-	imageHttp.SetRoutes()
+	imageHttp.StartService()
 }
