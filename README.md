@@ -3,7 +3,9 @@
 
 A service to process images using image processing techniques, and return the edited image.
 
-To build: go build -o vaticwella main.go
+To build: (main directory) go build -o vaticwella main.go
+
+To test: (top level directory) go test ./...
 
 Service has: 
 	Super Sampling,	Median filter
