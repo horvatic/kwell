@@ -1,4 +1,4 @@
-package test
+package imagePixelsTest
 
 import (
 	"github.com/horvatic/vaticwella/imagePixels"
