@@ -6,20 +6,20 @@ import (
 )
 
 func GetColorsMedian(colors []color.Color) color.Color {
-	var r, g, b, a []int
+	var r, g, b, a Colors
 	mid := len(colors) / 2
 	for _, c := range colors {
 		cr, cg, cb, ca := c.RGBA()
-		r = append(r, int(cr))
-		g = append(g, int(cg))
-		b = append(b, int(cb))
-		a = append(a, int(ca))
+		r = append(r, cr)
+		g = append(g, cg)
+		b = append(b, cb)
+		a = append(a, ca)
 	}
 
-	sort.Ints(r)
-	sort.Ints(g)
-	sort.Ints(b)
-	sort.Ints(a)
+	sort.Sort(r)
+	sort.Sort(g)
+	sort.Sort(b)
+	sort.Sort(a)
 
-	return color.RGBA{shiftInt(r[mid]), shiftInt(g[mid]), shiftInt(b[mid]), shiftInt(a[mid])}
+	return color.RGBA{shift(r[mid]), shift(g[mid]), shift(b[mid]), shift(a[mid])}
 }

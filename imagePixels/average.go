@@ -19,5 +19,5 @@ func Average(colors []color.Color) color.Color {
 	if n == 0 {
 		return color.RGBA{uint8(r), uint8(g), uint8(b), 255}
 	}
-	return color.RGBA{shiftUint32(r / n), shiftUint32(g / n), shiftUint32(b / n), 255}
+	return color.RGBA{shift(r / n), shift(g / n), shift(b / n), 255}
 }
