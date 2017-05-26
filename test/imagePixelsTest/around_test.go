@@ -11,7 +11,7 @@ func TestAround(test *testing.T) {
 	img := image.NewRGBA(image.Rect(0, 0, 10, 10))
 	imageSetUp(img)
 
-	colors := imagePixels.Around(img, 5, 5)
+	colors := imagePixels.Around(img, 5, 5, 1)
 
 	expColor := counterUInt32()
 	for _, c := range colors {
