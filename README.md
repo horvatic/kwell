@@ -10,4 +10,13 @@ To test: (top level directory) go test ./...
 Service has: 
 	Super Sampling,	Median filter
 
-Adding many more! 
+Running the Service:
+Post an image to localhost:8080
+ss = super sampling
+mf = mean filter
+sa = search area
+
+Example: 
+localhost:8080/ss?sa=10
+localhost:8080/mf?sa=1
+
