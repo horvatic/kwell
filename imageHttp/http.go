@@ -4,6 +4,8 @@ import (
 	"bytes"
 	"fmt"
 	"image"
+	_ "image/gif"
+	_ "image/jpeg"
 	"image/png"
 	"io/ioutil"
 	"net/http"
@@ -23,7 +25,7 @@ func imageService(res http.ResponseWriter, req *http.Request, process imageProce
 
 	indexHead := bytes.Index(body, []byte("\r\n\r\n")) + 4
 	bodyDecode := bytes.NewReader(body[indexHead:])
-	img, imageErr := png.Decode(bodyDecode)
+	img, _, imageErr := image.Decode(bodyDecode)
 	if imageErr != nil {
 		fmt.Fprintf(res, "error image: %s!%s", imageErr, body[indexHead:])
 		return

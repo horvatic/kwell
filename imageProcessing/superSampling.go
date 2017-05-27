@@ -7,8 +7,9 @@ import (
 
 func SuperSampling(source image.Image, searchArea int) image.Image {
 	img := image.NewRGBA(source.Bounds())
-	for py := 0; py < img.Rect.Dy(); py++ {
-		for px := 0; px < img.Rect.Dx(); px++ {
+	bound := img.Bounds()
+	for py := bound.Min.Y; py < bound.Max.Y; py++ {
+		for px := bound.Min.X; px < bound.Max.X; px++ {
 			img.Set(px, py, imagePixels.Average(imagePixels.Around(source, px, py, searchArea)))
 		}
 	}

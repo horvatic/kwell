@@ -20,6 +20,7 @@ mf = mean filter
 
 sa = search area
 
+supported image formats: gif, jpeg, png
 
 Example: 
 
