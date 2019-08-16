@@ -1,8 +1,9 @@
 package imageHttp
 
 import (
-	"github.com/horvatic/vaticwella/imageProcessing"
 	"net/http"
+
+	"github.com/horvatic/vaticwella/imageProcessing"
 )
 
 func superSampleService(res http.ResponseWriter, req *http.Request) {
@@ -11,4 +12,8 @@ func superSampleService(res http.ResponseWriter, req *http.Request) {
 
 func medianFilterService(res http.ResponseWriter, req *http.Request) {
 	imageService(res, req, imageProcessing.MedianFilter)
+}
+
+func binaryFilterService(res http.ResponseWriter, req *http.Request) {
+	imageService(res, req, imageProcessing.BinaryFilter)
 }

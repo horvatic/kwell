@@ -8,7 +8,7 @@ To build: (main directory) go build -o vaticwella main.go
 To test: (top level directory) go test ./...
 
 Service has: 
-	Super Sampling,	Median filter
+	Super Sampling,	Median filter, binary filter
 
 Running the Service:
 
@@ -17,6 +17,8 @@ Post an image to localhost:8080
 ss = super sampling
 
 mf = mean filter
+
+bf = binary filter
 
 sa = search area
 
