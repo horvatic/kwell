@@ -27,8 +27,12 @@ func imageService(res http.ResponseWriter, req *http.Request, process imageProce
 	bodyDecode := bytes.NewReader(body[indexHead:])
 	img, _, imageErr := image.Decode(bodyDecode)
 	if imageErr != nil {
-		fmt.Fprintf(res, "error image: %s!%s", imageErr, body[indexHead:])
-		return
+		bodyDecode := bytes.NewReader(body)
+		img, _, imageErr = image.Decode(bodyDecode)
+		if imageErr != nil {
+			fmt.Fprintf(res, "error image: %s!%s", imageErr, body)
+			return
+		}
 	}
 
 	processImage := process(img, getSearchAreaSize(req.URL))
