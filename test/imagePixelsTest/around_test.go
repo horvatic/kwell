@@ -1,10 +1,11 @@
 package imagePixelsTest
 
 import (
-	"github.com/horvatic/vaticwella/imagePixels"
 	"image"
 	"image/color"
 	"testing"
+
+	"github.com/horvatic/vaticwella/src/imagePixels"
 )
 
 func TestAround(test *testing.T) {

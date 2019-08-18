@@ -3,7 +3,7 @@ package imageHttp
 import (
 	"net/http"
 
-	"github.com/horvatic/vaticwella/imageProcessing"
+	"github.com/horvatic/vaticwella/src/imageProcessing"
 )
 
 func superSampleService(res http.ResponseWriter, req *http.Request) {

@@ -1,9 +1,10 @@
 package imagePixelsTest
 
 import (
-	"github.com/horvatic/vaticwella/imagePixels"
 	"image/color"
 	"testing"
+
+	"github.com/horvatic/vaticwella/src/imagePixels"
 )
 
 func TestGetColorsMedian(test *testing.T) {
