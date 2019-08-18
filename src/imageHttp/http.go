@@ -13,7 +13,7 @@ import (
 	"strconv"
 )
 
-type imageProcessor func(source image.Image, searchArea int) image.Image
+type imageProcessor func(source image.Image, searchArea int, runInParallel bool) image.Image
 
 func imageService(res http.ResponseWriter, req *http.Request, process imageProcessor) {
 	defer req.Body.Close()
@@ -35,10 +35,19 @@ func imageService(res http.ResponseWriter, req *http.Request, process imageProce
 		}
 	}
 
-	processImage := process(img, getSearchAreaSize(req.URL))
+	processImage := process(img, getSearchAreaSize(req.URL), getrunInParallel(req.URL))
 
 	res.Header().Set("Content-Type", "image/png")
 	png.Encode(res, processImage)
+}
+
+func getrunInParallel(u *url.URL) bool {
+	q := u.Query()
+	runInParallel, errors := strconv.ParseBool(q.Get("runInParallel"))
+	if errors != nil {
+		return false
+	}
+	return runInParallel
 }
 
 func getSearchAreaSize(u *url.URL) int {
