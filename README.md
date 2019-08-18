@@ -1,5 +1,6 @@
 # vaticwella
-[![Build Status](https://travis-ci.org/horvatic/vaticwella.svg?branch=master)](https://travis-ci.org/horvatic/vaticwella) [![Coverage Status](https://coveralls.io/repos/github/horvatic/vaticwella/badge.svg?branch=master)](https://coveralls.io/github/horvatic/vaticwella?branch=master)
+[![Build Status](https://travis-ci.org/horvatic/vaticwella.svg?branch=master)](https://travis-ci.org/horvatic/vaticwella) 
+[![Coverage Status](https://coveralls.io/repos/github/horvatic/vaticwella/badge.svg?branch=master)](https://coveralls.io/github/horvatic/vaticwella?branch=master)
 
 A service to process images using image processing techniques, and return the edited image.
 
