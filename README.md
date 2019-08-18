@@ -24,6 +24,8 @@ docker run --publish 8080:8080 --name vaticwella --rm vaticwella
 
 ## Running The Service
 
+host/{filter}?sa={searchArea}&runInParallel={ToRunInParallel}
+
 Post an image to localhost:8080
 
 ss = super sampling
