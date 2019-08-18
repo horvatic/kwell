@@ -1,6 +1,5 @@
 # Vaticwella
 [![Build Status](https://travis-ci.org/horvatic/vaticwella.svg?branch=master)](https://travis-ci.org/horvatic/vaticwella) 
-[![Coverage Status](https://coveralls.io/repos/github/horvatic/vaticwella/badge.svg?branch=master)](https://coveralls.io/github/horvatic/vaticwella?branch=master)
 
 
 ## Overview
