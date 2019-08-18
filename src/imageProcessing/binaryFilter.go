@@ -4,7 +4,7 @@ import (
 	"image"
 	"image/color"
 
-	"github.com/horvatic/vaticwella/imagePixels"
+	"github.com/horvatic/vaticwella/src/imagePixels"
 )
 
 func BinaryFilter(source image.Image, searchArea int) image.Image {
