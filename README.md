@@ -3,9 +3,18 @@
 
 A service to process images using image processing techniques, and return the edited image.
 
-To build: (main directory) go build -o vaticwella main.go
+To build: (go to main directory) go build -o vaticwella main.go
 
 To test: (top level directory) go test ./...
+
+Dockerhub image:
+https://hub.docker.com/r/horvatic/vaticwella
+
+To build a new docker image:
+(go to main directory) docker build -t vaticwella .
+
+To run image:
+docker run --publish 8080:8080 --name vaticwella --rm vaticwella
 
 Service has: 
 	Super Sampling,	Median filter, binary filter
