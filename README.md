@@ -15,6 +15,9 @@ To test: (top level directory) go test ./...
 Dockerhub image:
 https://hub.docker.com/r/horvatic/vaticwella
 
+To pull image from dockerhub
+docker pull horvatic/vaticwella
+
 To build a new docker image:
 (go to main directory) docker build -t vaticwella .
 
