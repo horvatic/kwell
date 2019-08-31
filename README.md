@@ -7,7 +7,7 @@ A service to process images using image processing techniques, and return the ed
 Service has: 
 	Super Sampling,	Median filter, binary filter
 
-To build: (go to main directory) go build -o vaticwella main.go
+To build: (go to main directory) go build vaticwella.go
 
 To test: (top level directory) go test ./...
 
